@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Ready Podcast - Exploring the Education-to-Employment Gap | EFFA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4A5568;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #F7931E;
+        }
+
+        .nav-login {
+            background: transparent;
+            color: #4A5568 !important;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid #4A5568;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-login:hover {
+            background: #4A5568;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: #F7931E;
+            color: white !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFA634 0%, #F9CC69 100%);
+            color: white;
+            padding: 6rem 5% 8rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            max-width: 650px;
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-logo {
+            width: 350px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .cta-primary {
+            background: white;
+            color: #FFA634;
+        }
+
+        .cta-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #FFA634;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: #F7FAFC;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #FFA634;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-tag.blue {
+            background: #4A78BC;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #4A5568;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: linear-gradient(135deg, #FFA634 0%, #F9CC69 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 166, 52, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        /* Hosts Section */
+        .hosts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .host-card {
+            text-align: center;
+        }
+
+        .host-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #FFA634;
+        }
+
+        .host-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a202c;
+        }
+
+        .host-card p {
+            color: #4a5568;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .content-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .content-card p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-card ul {
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            line-height: 2;
+        }
+
+        .content-card ul li {
+            margin-bottom: 0.75rem;
+            color: #4a5568;
+            font-size: 1.05rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #F7931E;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #F7931E;
+            border: 2px solid #F7931E;
+        }
+
+        .btn-secondary:hover {
+            background: #F7931E;
+            color: white;
+        }
+
+        .btn-center {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* Spotify Embed Responsive */
+        .spotify-embed-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .spotify-embed-wrapper iframe {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #CBD5E0;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-tertiary {
+            background: transparent;
+            color: #F7931E;
+            border: 2px solid #F7931E;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .cta-tertiary:hover {
+            background: #F7931E;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand img {
+            height: 35px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.6;
+            max-width: 300px;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-column a:hover {
+            color: #F7931E;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2d3748;
+            color: #A0AEC0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-logo {
+                width: 250px;
+            }
+
+            .hero-right {
+                order: -1;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hosts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-logo {
+                width: 200px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="images/logos/effalogo.png" alt="EFFA" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="effa-employers-page.html">For Employers</a></li>
+            <li><a href="universities.html">For Universities</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="job-ready.html">Job Ready Podcast</a></li>
+            <li><a href="https://www.effa.io/login" class="nav-login">Log In</a></li>
+            <li><a href="#request-demo" class="nav-cta">Schedule a Demo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="hero-tag">JOB READY PODCAST</span>
+                <h1>Bridging the Education-to-Employment Gap</h1>
+                <p>Kitchen-table conversations with experts exploring workforce development and the root causes of new grad turnover in their first year of employment.</p>
+                <div class="hero-ctas">
+                    <a href="https://open.spotify.com/show/0Mm2SP7oievqq3hZc4O3Iw" class="cta-primary" target="_blank">Subscribe on Spotify</a>
+                    <a href="https://podcasts.apple.com/us/podcast/job-ready/id1726097931" class="cta-secondary" target="_blank">Subscribe on Apple Podcasts</a>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="images/logos/EFFA_logo_EVT_circle_JobReady__1_.png" alt="Job Ready Podcast" class="hero-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Recent Episode Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">LATEST EPISODE</span>
+                <h2>Most Recent Episode</h2>
+                <p>Listen to our latest conversation exploring the education-to-employment gap</p>
+            </div>
+            
+            <div class="spotify-embed-wrapper">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/0Mm2SP7oievqq3hZc4O3Iw/video?utm_source=generator" width="624" height="351" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Job Ready Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">ABOUT THE PODCAST</span>
+                <h2>Exploring the Path from Education to Employment</h2>
+                <p>Job Ready is the EFFA bi-weekly podcast dedicated to the issues that universities, their students, and the employers who hire them face around creating job readiness within the next generation of the US workforce.</p>
+            </div>
+
+            <div class="about-grid">
+                <div>
+                    <img src="images/job-ready/SanFranTrio.png" alt="Job Ready Hosts Recording" class="about-image">
+                </div>
+                <div class="about-text">
+                    <h3>Kitchen-Table Conversations with Industry Leaders</h3>
+                    <p>Informed by the issues you're grappling with today, join us bi-weekly to hear how innovators and entrepreneurs in the education-to-employment space are solving for issues that will build the capacity of the future US workforce.</p>
+                    <p>Employers agree that university students need more preparation to become ready for the workplace. This is evidenced by the high rate of voluntary turnover among new grads during their first year of employment.</p>
+                    <p><strong>Job Ready's editorial charter is to explore the education-to-employment gap through root causes of this high rate of turnover.</strong></p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-badge">
+                            <span class="stat-number">2</span>
+                            Years Running
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-number">35+</span>
+                            Episodes
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-number">4</span>
+                            Roundtables
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Hosts Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">MEET THE HOSTS</span>
+                <h2>Your Guides Through the Education-to-Employment Journey</h2>
+            </div>
+
+            <div class="hosts-grid">
+                <div class="host-card">
+                    <img src="images/team/Charlie_Nguyen_EFFA_Headshot.jpeg" alt="Charlie Nguyen" class="host-image">
+                    <h3>Charlie Nguyen</h3>
+                    <p>CEO, EFFA</p>
+                    <p>20+ years in higher education leadership</p>
+                </div>
+                <div class="host-card">
+                    <img src="images/team/Jeff_Nelder_EFFA_Headshot.jpeg" alt="Jeff Nelder" class="host-image">
+                    <h3>Jeff Nelder</h3>
+                    <p>Chief Purpose Officer, EFFA</p>
+                    <p>Marketing and communications strategist</p>
+                </div>
+                <div class="host-card">
+                    <img src="images/advisory/James_Oliverio_Headshot.png" alt="James Oliverio" class="host-image">
+                    <h3>James Oliverio</h3>
+                    <p>Executive Producer</p>
+                    <p>Emmy Award-winning producer and educator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Roundtables Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">EXECUTIVE ROUNDTABLES</span>
+                <h2>Deep Dive Discussions with Industry Leaders</h2>
+                <p>Our Executive Roundtables bring together thought leaders from the world's most influential brands to explore critical workforce development challenges and opportunities.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Job Readiness in the AI-Augmented Workplace</h3>
+                <p>The workplace is rapidly transforming into an AI-augmented reality, and it's crucial to prepare your workforce for the future. In our executive roundtables, we bring together senior leaders from organizations like Jobs for the Future, BCG U, KPMG, University of Phoenix, and Oracle to explore:</p>
+                <ul style="margin-left: 2rem; margin-bottom: 2rem;">
+                    <li style="margin-bottom: 0.75rem;">The challenges and opportunities in preparing early career talent for an AI-driven job market</li>
+                    <li style="margin-bottom: 0.75rem;">How organizations are adapting their workforce development strategies</li>
+                    <li style="margin-bottom: 0.75rem;">Practical solutions for bridging the skills gap in the modern workplace</li>
+                    <li style="margin-bottom: 0.75rem;">The future of work and career readiness programs</li>
+                </ul>
+                
+                <div class="btn-center">
+                    <a href="https://www.jobreadypodcast.com/executive-roundtables" class="btn btn-primary" target="_blank">Explore Executive Roundtables</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podcast Episodes Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag blue">PODCAST EPISODES</span>
+                <h2>Listen to the Latest Conversations</h2>
+                <p>Each episode features in-depth discussions with innovators and entrepreneurs who are solving the most pressing challenges in the education-to-employment space.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Recent Episode Topics Include:</h3>
+                <ul style="margin-left: 2rem; margin-bottom: 2rem; line-height: 2;">
+                    <li><strong>Generative AI in HR:</strong> How AI is transforming human resources and talent acquisition</li>
+                    <li><strong>Skills-Based Hiring:</strong> Moving beyond resumes to evaluate candidate potential</li>
+                    <li><strong>Work-Based Learning:</strong> Bridging the gap between classroom and career</li>
+                    <li><strong>Entry-Level Workforce Development:</strong> Preparing Gen Z for the modern workplace</li>
+                    <li><strong>The Future of DEI:</strong> Evolving approaches to diversity, equity, and inclusion</li>
+                </ul>
+                
+                <div class="btn-center">
+                    <a href="https://www.jobreadypodcast.com/podcast-1" class="btn btn-primary" target="_blank">Explore Job Ready Podcast</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Improve Job Readiness at Your Organization?</h2>
+            <p>Discover how EFFA helps employers invest in the talent they want to hire and retain while reducing student debt and improving workforce outcomes.</p>
+            <div class="cta-buttons">
+                <a href="#request-demo" class="cta-primary">Request a Demo</a>
+                <a href="effa-employers-page.html" class="cta-tertiary">Explore EFFA Solutions</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1rem;">Have questions? <a href="mailto:demo@effa.io" style="color: #F7931E; text-decoration: none;">Contact our team</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logos/effalogowhite.png" alt="EFFA">
+                <p>Employer-Funded Financial Aid platform making tuition assistance work better for everyone.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="effa-employers-page.html">For Employers</a></li>
+                    <li><a href="universities.html">For Universities</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="job-ready.html">Job Ready Podcast</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#request-demo">Request Demo</a></li>
+                    <li><a href="https://www.effa.io/login">Log In</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Employer-Funded Financial Aid, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EFFA | Industry Veterans Building Better Tuition Assistance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4A5568;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #F7931E;
+        }
+
+        .nav-cta {
+            background: #F7931E;
+            color: white !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 6rem 5% 8rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 147, 30, 0.1));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(247, 147, 30, 0.15);
+            color: #F7931E;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(247, 147, 30, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: #F7931E;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            color: #CBD5E0;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: #F7FAFC;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #FFF5E6;
+            color: #F7931E;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid #FFE4B3;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Credentials Grid */
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .credential-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #F7931E;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .credential-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .credential-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .credential-card h3 {
+            font-size: 1.35rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .credential-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        .credential-stat {
+            font-size: 0.95rem;
+            color: #F7931E;
+            font-weight: 600;
+            background: #FFF5E6;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* Co-Founders */
+        .cofounders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .cofounder-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .cofounder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .cofounder-image-placeholder {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            background: #E2E8F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-style: italic;
+            border: 4px solid #F7931E;
+        }
+
+        .cofounder-card h3 {
+            font-size: 1.5rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .cofounder-card h4 {
+            font-size: 1rem;
+            color: #F7931E;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .cofounder-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* Vision Box */
+        .vision-box {
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border-left: 6px solid #F7931E;
+        }
+
+        .vision-box h3 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .vision-box p {
+            font-size: 1.15rem;
+            color: #4A5568;
+            line-height: 1.8;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-top: 4px solid #F7931E;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .value-card h4 {
+            font-size: 1.25rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* Advisory Board */
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .advisor-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .advisor-image-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            background: #E2E8F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #718096;
+            font-style: italic;
+            border: 3px solid #F7931E;
+            font-size: 0.85rem;
+        }
+
+        .advisor-card h4 {
+            font-size: 1.15rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .advisor-card p {
+            font-size: 0.9rem;
+            color: #F7931E;
+            font-weight: 500;
+        }
+
+        /* Why Section */
+        .why-text {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-top: 3rem;
+        }
+
+        .why-text h3 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .why-text p {
+            font-size: 1.15rem;
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .insight-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .insight-list li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            color: #4A5568;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .insight-list li:last-child {
+            border-bottom: none;
+        }
+
+        .insight-list li::before {
+            content: 'â†’';
+            position: absolute;
+            left: 0;
+            color: #F7931E;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #F7931E 0%, #FFA634 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mission-section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .mission-section p {
+            font-size: 1.35rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Podcast Section */
+        .podcast-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            border-left: 6px solid #F7931E;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .podcast-card h3 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .podcast-card p {
+            font-size: 1.15rem;
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        .podcast-stat {
+            font-size: 0.95rem;
+            color: #F7931E;
+            font-weight: 600;
+            background: #FFF5E6;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .podcast-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #F7931E;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .podcast-link:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Join Section */
+        .join-section {
+            padding: 6rem 5%;
+            background: #F7FAFC;
+        }
+
+        .join-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .join-section h2 {
+            font-size: 2.75rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .join-section p {
+            font-size: 1.25rem;
+            color: #718096;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .join-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .cta-primary {
+            background: #F7931E;
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: #4A5568;
+            border: 2px solid #E2E8F0;
+        }
+
+        .cta-secondary:hover {
+            border-color: #F7931E;
+            color: #F7931E;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: #CBD5E0;
+            padding: 4rem 5% 2rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand img {
+            height: 40px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #F7931E;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #A0AEC0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .credentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .credentials-grid,
+            .cofounders-grid,
+            .values-grid,
+            .advisory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .join-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Make podcast logo stack on mobile */
+            .podcast-card > div:first-child {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="images/logos/effalogo.png" alt="EFFA Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="effa-employers-page.html">For Employers</a></li>
+            <li><a href="universities.html">For Universities</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="podcast.html">Job Ready Podcast</a></li>
+            <li><a href="#" class="nav-cta">Request Demo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">ABOUT EFFA</span>
+            <h1>Built by <span class="highlight">Industry Veterans</span> Who've Been There Before</h1>
+            <p>We're not a startup experimenting with tuition assistance. We're the team that built the industry's leading platformsâ€”and we're doing it better this time.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">WHO WE ARE</span>
+                <h2>Decades of Experience Building What Works</h2>
+                <p>Our leadership team has spent over six decades combined in higher education, working with employers and universities to make tuition assistance actually function.</p>
+            </div>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <span class="credential-icon">ðŸ¢</span>
+                    <h3>Built EdAssist and Inquisic</h3>
+                    <p>We built and successfully exited two of the tuition assistance industry's leading companiesâ€”EdAssist and Inquisicâ€”serving millions of employees across Fortune 500 organizations.</p>
+                    <span class="credential-stat">Proven track record</span>
+                </div>
+                <div class="credential-card">
+                    <span class="credential-icon">ðŸŽ“</span>
+                    <h3>Six Decades in Higher Education</h3>
+                    <p>We bring 60+ years of combined experience working in and with higher education institutions, understanding both the opportunities and challenges universities face.</p>
+                    <span class="credential-stat">60+ years combined experience</span>
+                </div>
+                <div class="credential-card">
+                    <span class="credential-icon">ðŸ¤</span>
+                    <h3>Working with Employers on Behalf of Higher Ed</h3>
+                    <p>Our team has spent years building bridges between universities and employers, understanding what both sides need to make education partnerships successful.</p>
+                    <span class="credential-stat">Deep industry relationships</span>
+                </div>
+                <div class="credential-card">
+                    <span class="credential-icon">ðŸŽ™ï¸</span>
+                    <h3>Launched and Co-Hosting Job Ready for Two Years</h3>
+                    <p>We have launched and co-hosted the Job Ready podcast for the past two years, exploring the education-to-employment gap and solutions with industry experts on the cutting edge of workforce development.</p>
+                    <span class="credential-stat">2 years of thought leadership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Co-Founders Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">LEADERSHIP</span>
+                <h2>Meet Our Co-Founders</h2>
+                <p>Three industry veterans united by a shared mission to fix what's broken in tuition assistance</p>
+            </div>
+            <div class="cofounders-grid">
+                <div class="cofounder-card">
+                    <div class="cofounder-image-placeholder">
+                        <img src="images/team/Charlie_Nguyen_EFFA_Headshot.jpeg" alt="Charlie Nguyen" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h3>Charlie Nguyen</h3>
+                    <h4>Chief Executive Officer</h4>
+                    <p>Charlie brings decades of experience building industry-leading tuition assistance platforms, including EdAssist and Inquisic, serving millions of employees across Fortune 500 companies.</p>
+                </div>
+                <div class="cofounder-card">
+                    <div class="cofounder-image-placeholder">
+                        <img src="images/team/Jeff_Nelder_EFFA_Headshot.jpeg" alt="Jeff Nelder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h3>Jeff Nelder</h3>
+                    <h4>Chief Marketing Officer</h4>
+                    <p>With over 20 years in higher education, Jeff has worked extensively with employers on behalf of universities, understanding both sides of the education-to-employment partnership.</p>
+                </div>
+                <div class="cofounder-card">
+                    <div class="cofounder-image-placeholder">
+                        <img src="images/team/Jeff_Creighton_EFFA_Headshot.jpeg" alt="Jeff Creighton" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h3>Jeff Creighton</h3>
+                    <h4>Chief Product Officer</h4>
+                    <p>Jeff brings over 20 years in higher education and deep expertise in building platforms that connect universities and employers to serve students effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Values Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">OUR FOUNDATION</span>
+                <h2>Vision & Values</h2>
+                <p>The principles that guide everything we build</p>
+            </div>
+            
+            <!-- Vision -->
+            <div class="vision-box">
+                <h3>Our Vision</h3>
+                <p>We envision a future where tuition assistance works for all stakeholders: employers, their workforce, and the learning providers who educate this workforce. In this future, milestone-based scholarships decrease student debt while graduation rates improve. More students know where they'll work upon graduation, and more jobs are filled quickly with the right talent, leading to better job satisfaction, productivity and profitability. If we all work together, universities, their student bodies, and the employers who hire those studentsâ€”future members of the US workforceâ€”will have the confidence of knowing they will be gainfully employed, while employers thrive because they will be able to hire and retain the right talent to drive the growth of their businesses.</p>
+            </div>
+
+            <!-- Values -->
+            <div style="margin-top: 4rem;">
+                <h3 style="font-size: 2rem; color: #1a202c; margin-bottom: 2rem; font-weight: 700; text-align: center;">Our Values</h3>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <h4>Become The One To Trust</h4>
+                        <p>We hold a sacred responsibility in reducing student debt while connecting talent to jobs. Overcoming inertia within the current system is job #1. Trust is hard won and easy to lose - so we must strive with consistency to earn it and keep it.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h4>All Boats Rise Together</h4>
+                        <p>We believe in the stakeholder model approach. When a company focuses solely on a single stakeholder, to the exclusion of others, it puts the "trustworthiness" of the organization at risk. At EFFA, we consistently strive to earn our reputation as "the one to trust" in financial services and human capital.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h4>Culture of: "GSD and Then Some (ATS)!"</h4>
+                        <p>Always over-deliver on any promise you make... and then some!</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h4>Always Learning</h4>
+                        <p>We are committed to a long-term cycle of consistent optimization. The more data we leverage, the more we learn, the better we get, and the greater the value we can create across all stakeholders - students, the universities that educate them, and the enterprises that employ them.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h4>Think Globally, Solve Locally</h4>
+                        <p>We are both student-centric and employer focused. This means that although our purpose is to serve students, we must realize that this entails prioritizing the needs of both students and employers. We approach all dimensions of our platform with global need, scale and size in mind, while getting to know - and ensuring that - each stakeholder's requirements are met to achieve buy-in, effective usage, and a mutual cycle of benefit and success.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <h4>Workforce Wellbeing First</h4>
+                        <p>When we have the bandwidth to take care of our families and ourselves first, that wellbeing translates into creativity, inspiration and momentum. We are hard chargers, who get it done -and then some. This GSD posture is fueled by "Workforce Wellbeing First."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Board Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">ADVISORY BOARD</span>
+                <h2>Guided by Industry Leaders</h2>
+                <p>Our advisory board brings deep expertise across education, technology, and workforce development</p>
+            </div>
+            <div class="advisory-grid">
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Rob_Wrubel_Headshot.png" alt="Rob Wrubel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Rob Wrubel</h4>
+                    <p>Advisory Board President</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Gary_Bolles_Headshot_copy.png" alt="Gary Bolles" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Gary Bolles</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Doug_Sellers_Headshot.jpg" alt="Doug Sellers" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Doug Sellers</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Christine_Hobbs_Headshot.jpg" alt="Christine Hobbs" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Christine Hobbs</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Matt_Ankrum_Headshot.png" alt="Matt Ankrum" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Matt Ankrum</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/James_Oliverio_Headshot.png" alt="James Oliverio" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>James Oliverio</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Andre_Bueno_Headshot.jpg" alt="Andre Bueno" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Andre Bueno</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Joseph_Clay_Headshot.jpeg" alt="Joseph Clay" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Joseph Clay</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+                <div class="advisor-card">
+                    <div class="advisor-image-placeholder">
+                        <img src="images/advisory/Norm_Allgood_Headshot.png" alt="Norm Allgood" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    </div>
+                    <h4>Norm Allgood</h4>
+                    <p>Advisory Board Member</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We Built EFFA Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">WHY WE BUILT EFFA</span>
+                <h2>We Saw the Problems Firsthand</h2>
+                <p>After years of building tuition assistance platforms and working with employers and universities, we identified the systemic issues preventing programs from delivering real value.</p>
+            </div>
+            <div class="why-text">
+                <h3>The System Was Broken for Everyone</h3>
+                <p>In our experience building and operating tuition assistance programs serving millions of employees, we saw the same problems repeat across every implementation:</p>
+                
+                <ul class="insight-list">
+                    <li><strong>Employers wanted participation and ROI</strong> but couldn't get either. Manual processes drained HR teams while employees couldn't afford upfront costsâ€”even with 100% reimbursement promised.</li>
+                    
+                    <li><strong>Universities wanted to grow employer partnerships</strong> but TPAs took 20-45% fees and controlled the relationships. Administrative burden prevented scaling, and reimbursement models limited student enrollment.</li>
+                    
+                    <li><strong>Students needed education to advance</strong> but couldn't access the benefits supposedly available to them. The out-of-pocket barrier excluded the very people who needed help most.</li>
+                </ul>
+
+                <p style="margin-top: 2rem; font-weight: 600; font-size: 1.2rem; color: #1a202c;">We knew there had to be a better way. So we built it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>We are on a mission to reduce student debt by helping employers invest in the talent they wish to hire and retainâ€”by making tuition assistance work for everyone: employers, universities, and the students they serve.</p>
+        </div>
+    </section>
+
+    <!-- Job Ready Podcast Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <div class="section-header">
+                <span class="section-tag">JOB READY PODCAST</span>
+                <h2>Exploring the Education-to-Employment Gap</h2>
+                <p>Kitchen-table conversations with experts working to bridge the gap between education and career readiness</p>
+            </div>
+            <div class="podcast-card">
+                <div style="display: grid; grid-template-columns: 250px 1fr; gap: 3rem; align-items: center; margin-bottom: 2rem;">
+                    <div style="text-align: center;">
+                        <img src="images/logos/Job_Ready_the_EFFA_Podcast_Logo_Square.png" alt="Job Ready: The EFFA Podcast" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">Job Ready: The EFFA Podcast</h3>
+                        <span class="podcast-stat">2 years, 4 executive roundtables and 35+ episodes</span>
+                    </div>
+                </div>
+                <p>Employers agree that university students need more preparation to become ready for the workplace. This is evidenced by the high rate of voluntary turnover among new grads during their first year of employment.</p>
+                <p>Job Ready's editorial charter is to explore the education-to-employment gap through root causes of this high rate of turnover. Towards this end, we hold kitchen-table style conversations with the experts who are working to create solutions.</p>
+                <a href="https://www.jobreadypodcast.com/" class="podcast-link" target="_blank" rel="noopener noreferrer">Explore Job Ready</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-section">
+        <div class="join-content">
+            <h2>Inspired to Build the Premier Education-to-Employment Platform?</h2>
+            <p>We know students because we've been students. We also know employers because we are employers. If you're inspired by the idea of adding your passion and expertise to this initiative, you may be the best match.</p>
+            <div class="join-buttons">
+                <a href="#" class="cta-primary">Explore Careers</a>
+                <a href="#" class="cta-secondary">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logos/effalogo.png" alt="EFFA">
+                <p>Making tuition assistance work for employers, universities, and the students they serve.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="effa-employers-page.html">For Employers</a></li>
+                    <li><a href="universities.html">For Universities</a></li>
+                    <li><a href="#">EFFAPay Platform</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="podcast.html">Job Ready Podcast</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#">Request Demo</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Employer-Funded Financial Aid, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

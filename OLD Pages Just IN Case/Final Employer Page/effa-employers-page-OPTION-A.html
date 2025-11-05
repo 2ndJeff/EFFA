@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Employers - EFFA | Transform Your Tuition Assistance Program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4A5568;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #F7931E;
+        }
+
+        .nav-login {
+            background: transparent;
+            color: #4A5568 !important;
+            padding: 0.75rem 1.75rem;
+            border: 2px solid #4A5568;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-login:hover {
+            background: #4A5568;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: #F7931E;
+            color: white !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 6rem 5% 8rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 147, 30, 0.1));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-left {
+            max-width: 650px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateX(-5px);
+            box-shadow: 0 8px 24px rgba(247, 147, 30, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F7931E;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #CBD5E0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .stat-card {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(247, 147, 30, 0.15);
+            color: #F7931E;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(247, 147, 30, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+
+        .hero h1 .highlight {
+            color: #F7931E;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+            color: #CBD5E0;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary, .cta-secondary, .cta-tertiary {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        .cta-primary {
+            background: #F7931E;
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #1a202c;
+        }
+
+        .cta-tertiary {
+            background: transparent;
+            color: #F7931E;
+            border: 2px solid #F7931E;
+        }
+
+        .cta-tertiary:hover {
+            background: #F7931E;
+            color: white;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 6rem 5%;
+            background: #F7FAFC;
+        }
+
+        .problem-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #FFF5E6;
+            color: #F7931E;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid #FFE4B3;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            border-left: 4px solid #F7931E;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .problem-card h3 {
+            font-size: 1.35rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .problem-card p {
+            color: #718096;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .problem-stat {
+            font-size: 0.95rem;
+            color: #F7931E;
+            font-weight: 600;
+            background: #FFF5E6;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .solution-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
+        }
+
+        .solution-grid:nth-child(even) {
+            direction: rtl;
+        }
+
+        .solution-grid:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .solution-text h3 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .solution-text p {
+            font-size: 1.1rem;
+            color: #718096;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-benefits {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .solution-benefits li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #4A5568;
+            font-size: 1.05rem;
+        }
+
+        .solution-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #F7931E;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .solution-image-placeholder {
+            background: #F7FAFC;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            color: #718096;
+            font-style: italic;
+            border: 2px dashed #E2E8F0;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .how-it-works-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 2.5rem;
+            background: #F7931E;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .step-card > p {
+            color: #CBD5E0;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .step-card > p:last-of-type {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .step-image-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: auto;
+        }
+            text-align: center;
+            color: #CBD5E0;
+            font-style: italic;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 6rem 5%;
+            background: #F7FAFC;
+        }
+
+        .benefits-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .benefit-column {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .benefit-column h3 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .benefit-column h4 {
+            font-size: 1rem;
+            color: #F7931E;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-item h5 {
+            font-size: 1.15rem;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .benefit-item p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .proof-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .proof-card {
+            background: linear-gradient(135deg, #F7FAFC 0%, #EDF2F7 100%);
+            padding: 4rem;
+            border-radius: 16px;
+            border-left: 6px solid #F7931E;
+            margin-top: 3rem;
+        }
+
+        .proof-card h3 {
+            font-size: 1.75rem;
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .proof-card p {
+            font-size: 1.15rem;
+            color: #4A5568;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .proof-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .proof-stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .proof-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #F7931E;
+            margin-bottom: 0.5rem;
+        }
+
+        .proof-stat-label {
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            color: #CBD5E0;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: #CBD5E0;
+            padding: 4rem 5% 2rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand img {
+            height: 40px;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            color: #A0AEC0;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul li a {
+            color: #A0AEC0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #F7931E;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #A0AEC0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .benefits-split {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none; /* You may want to add a hamburger menu here */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-primary, .cta-secondary, .cta-tertiary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="https://www.effa.io"><img src="effa-logo.png" alt="EFFA Logo" class="logo"></a>
+        <ul class="nav-links">
+            <li><a href="https://www.effa.io/employer">For Employers</a></li>
+            <li><a href="https://www.effa.io/university">For Universities</a></li>
+            <li><a href="https://www.effa.io/about">About Us</a></li>
+            <li><a href="https://www.effa.io/jobready">Job Ready Podcast</a></li>
+            <li><a href="https://www.effa.io/blog">Blog</a></li>
+            <li><a href="https://www.effa.io/login" class="nav-login">Log In</a></li>
+            <li><a href="#request-demo" class="nav-cta">Request Demo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="hero-tag">FOR EMPLOYERS</span>
+                <h1>Transform Your <span class="highlight">Underperforming</span> Tuition Benefit Into a Strategic Advantage</h1>
+                <p>Stop funding a benefit nobody uses. EFFA eliminates the barriers preventing your employees from accessing education—while giving you complete control, zero compliance risk, measurable ROI, and better university pricing. All at zero cost to you.</p>
+                <div class="hero-ctas">
+                    <a href="#request-demo" class="cta-primary">Request a Demo</a>
+                    <a href="#how-it-works" class="cta-secondary">See How It Works</a>
+                    <a href="#" class="cta-tertiary">Download Overview</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Say tuition assistance is important to job satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">70-90%</div>
+                    <div class="stat-label">Reduction in administrative time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Fraud incidents through direct institutional reporting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="problem-content">
+            <div class="section-header">
+                <span class="section-tag">THE CHALLENGE</span>
+                <h2>Where Traditional Tuition Assistance Fails</h2>
+                <p>Most tuition programs deliver disappointing results. Here's why yours isn't working.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">💸</span>
+                    <h3>The Out-of-Pocket Barrier</h3>
+                    <p>Employees can't afford upfront tuition costs, even with 100% reimbursement. Lower-income workersâ€”who need it mostâ€”are completely excluded.</p>
+                    <span class="problem-stat">80% interested, only 2% participate</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">⏰</span>
+                    <h3>The Hidden Costs</h3>
+                    <p>Time spent by employees, on the clock, gathering documents to submit for reimbursement can add up to more than you spend on TPA fees.</p>
+                    <span class="problem-stat">Hours of HR time per employee</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">💰</span>
+                    <h3>The TPA Tax</h3>
+                    <p>Traditional TPAs charge universities 20-45% and revenue-share on tuition, preventing universities from offering you their best pricing. You're paying more than you should.</p>
+                    <span class="problem-stat">20-45% markup on every transaction</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🚫</span>
+                    <h3>The Trust Gap</h3>
+                    <p>Manual reimbursement requiring employees to submit grades and receipts creates friction, errors, and fraud opportunities that destroy program confidence.</p>
+                    <span class="problem-stat">High fraud risk</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">📊</span>
+                    <h3>The Measurement Void</h3>
+                    <p>Nearly 40% of employers lack metrics to understand if their tuition programs deliver any value. You're flying blind on ROI.</p>
+                    <span class="problem-stat">No data = No budget protection</span>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">🧾</span>
+                    <h3>Multiple Invoice Chaos</h3>
+                    <p>Managing payments across different universities creates administrative headaches and reconciliation nightmares for your finance team.</p>
+                    <span class="problem-stat">Dozens of vendor relationships</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+        <div class="solution-content">
+            <div class="section-header">
+                <span class="section-tag">THE EFFA SOLUTION</span>
+                <h2>Zero-Risk, Zero-Cost, Automated Direct Payment</h2>
+                <p>We eliminate every pain point while giving you complete control, visibility, and better pricingâ€”at no cost to your organization</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h3>Remove the Financial Barrier</h3>
+                    <p>Employees no longer pay upfront and wait for reimbursement. EFFA pays universities directly after course completion and policy complianceâ€”making your benefit accessible to everyone who needs it.</p>
+                    <ul class="solution-benefits">
+                        <li>No out-of-pocket costs for employees</li>
+                        <li>Increased participation across all income levels</li>
+                        <li>Improved employee satisfaction and retention</li>
+                        <li>Removes the biggest barrier to program usage</li>
+                    </ul>
+                </div>
+                <div class="solution-image-placeholder">
+                    [Screenshot: Employee enrollment interface showing $0 upfront cost]
+                </div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h3>Automated Compliance Verification</h3>
+                    <p>Payment is deferred until after successful course completion. Universities report grades directly to EFFA, and only policy-compliant completions trigger payment. Zero risk of paying for failed courses or non-compliant programs.</p>
+                    <ul class="solution-benefits">
+                        <li>100% compliance with your education policy</li>
+                        <li>Automatic grade verification from universities</li>
+                        <li>No employee-submitted receipts or transcripts</li>
+                        <li>Complete fraud elimination</li>
+                    </ul>
+                </div>
+                <div class="solution-image-placeholder">
+                    [Screenshot: Automated compliance dashboard with grade verification]
+                </div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h3>Radical Administrative Simplification</h3>
+                    <p>One 15-minute setup replaces hours of monthly HR work. One consolidated monthly invoice replaces multiple school payments. One-click eligibility approvals replace lengthy review processes.</p>
+                    <ul class="solution-benefits">
+                        <li>70-90% reduction in administrative time</li>
+                        <li>Single monthly invoice for all schools</li>
+                        <li>Complete audit trail for all transactions</li>
+                        <li>Your HR team focuses on strategic work</li>
+                    </ul>
+                </div>
+                <div class="solution-image-placeholder">
+                    [Screenshot: Simple billing dashboard with consolidated invoice]
+                </div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h3>Complete Visibility & Control</h3>
+                    <p>Real-time dashboard showing participation, completion rates, and ROI metrics you can take to leadership. You approve each participant and maintain full control over spending.</p>
+                    <ul class="solution-benefits">
+                        <li>One-click eligibility approvals</li>
+                        <li>Real-time participation and spending data</li>
+                        <li>Retention impact metrics</li>
+                        <li>Budget controls and spending limits</li>
+                    </ul>
+                </div>
+                <div class="solution-image-placeholder">
+                    [Screenshot: Analytics dashboard showing ROI metrics]
+                </div>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-text">
+                    <h3>Better Pricing Through Better Economics</h3>
+                    <p>Unlike traditional TPAs that charge universities 20-45% and incentivize higher tuition, EFFA charges only 3.25%â€”allowing us to negotiate significantly steeper discounts that flow directly to you.</p>
+                    <ul class="solution-benefits">
+                        <li>Zero cost to your organizationâ€”no setup fees, no transaction fees</li>
+                        <li>Enhanced university discounts vs. TPA alternatives</li>
+                        <li>No revenue sharing that inflates costs</li>
+                        <li>Transparent pricing model aligned with your interests</li>
+                    </ul>
+                </div>
+                <div class="solution-image-placeholder">
+                    <img src="EFFA_3_25__vs_TPA_20-45__infographic_comparison_for_employers.png" alt="EFFA 3.25% vs TPA 20-45% Fee Comparison" style="max-width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="how-it-works-content">
+            <div class="section-header">
+                <span class="section-tag" style="background: rgba(247, 147, 30, 0.15); border-color: rgba(247, 147, 30, 0.3);">SIMPLE IMPLEMENTATION</span>
+                <h2 style="color: white;">How It Works: Four Simple Steps</h2>
+                <p style="color: #CBD5E0;">From setup to payment, everything is automated. You stay in control without the administrative burden.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Quick Setup</h3>
+                    <p>Upload your education policy to our platform. We automatically configure everything to match your requirements. No integration with your systems required.</p>
+                    <div class="step-image-placeholder">
+                        <img src="step1-quick-setup.png" alt="Step 1: Quick Setup" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Time:</strong> 15 minutes, one time</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Employee Enrollment</h3>
+                    <p>Employees see partner universities on your benefits page, contact them directly, and enroll. You get a notification to approve their eligibility with one click.</p>
+                    <div class="step-image-placeholder">
+                        <img src="step2-employee-enrollment.png" alt="Step 2: Employee Enrollment" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Your involvement:</strong> One-click approval</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Automated Compliance</h3>
+                    <p>We defer all billing until course completion. Universities report grades directly to EFFA. We verify compliance with your policy automatically. Only compliant transactions get approved.</p>
+                    <div class="step-image-placeholder">
+                        <img src="step3-automated-compliance.png" alt="Step 3: Automated Compliance" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Your risk:</strong> Zero</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Simple Monthly Billing</h3>
+                    <p>You receive one consolidated invoice with line-item detail. Every charge is guaranteed to meet your policy requirements. Pay one bill for all EFFA enrollments.</p>
+                    <div class="step-image-placeholder">
+                        <img src="step4-simple-billing.png" alt="Step 4: Simple Monthly Billing" style="max-width: 100%; border-radius: 8px;">
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Admin time:</strong> Minutes per month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-content">
+            <div class="section-header">
+                <span class="section-tag">KEY BENEFITS</span>
+                <h2>Value That Resonates Across Your Organization</h2>
+                <p>Whether you're presenting to the C-suite or managing day-to-day operations, EFFA delivers measurable impact</p>
+            </div>
+            <div class="benefits-split">
+                <div class="benefit-column">
+                    <h4>For Senior Leadership</h4>
+                    <h3>Prove ROI to the C-Suite</h3>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <h5>Transform Cost Center to Strategic Asset</h5>
+                            <p>Move tuition assistance from "nice to have" to competitive advantage with data-driven retention and productivity metrics.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Better Pricing, Zero Implementation Cost</h5>
+                            <p>Our lean 3.25% merchant fee (vs. TPAs' 20-45%) means steeper university discounts that reduce your actual tuition spend. No setup fees, no ongoing costs to your organization.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Measurable Business Outcomes</h5>
+                            <p>Track participation rates, retention impact, skill development, and progressionâ€”all metrics you can present to leadership to justify and protect budget.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Competitive Differentiation</h5>
+                            <p>Offer a benefit that actually worksâ€”positioning your organization as an employer of choice in talent-competitive markets.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefit-column">
+                    <h4>For HR & Benefits Teams</h4>
+                    <h3>Make Your Life Easier</h3>
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <h5>Radical Time Savings</h5>
+                            <p>Eliminate 70-90% of administrative processing time. No more receipt verification, transcript review, or invoice reconciliation.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Error-Free Processing</h5>
+                            <p>Automated compliance means zero policy violations, no fraud risk, and complete confidence in every payment.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Happier Employees</h5>
+                            <p>Employees love not paying out-of-pocket. Higher satisfaction scores, fewer complaints, increased program usage.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h5>Focus on Strategic Work</h5>
+                            <p>Spend your time on initiatives that drive business impactâ€”not paperwork. EFFA handles the administrative burden.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="proof-content">
+            <div class="section-header">
+                <span class="section-tag">PROVEN EXPERTISE</span>
+                <h2>Built by Industry Veterans Who've Been There</h2>
+            </div>
+            <div class="proof-card">
+                <h3>Experience You Can Trust</h3>
+                <p>We've previously built and successfully exited two tuition assistance companiesâ€”EdAssist and Inquisicâ€”serving millions of employees. We know what works because we've done it before.</p>
+                <p>Our platform incorporates decades of learnings from managing employer tuition programs at scale, eliminating the problems that plagued traditional solutions.</p>
+            </div>
+            <div class="proof-stats">
+                <div class="proof-stat-item">
+                    <div class="proof-stat-number">85%</div>
+                    <div class="proof-stat-label">Say program is important to job satisfaction</div>
+                </div>
+                <div class="proof-stat-item">
+                    <div class="proof-stat-number">70-90%</div>
+                    <div class="proof-stat-label">Reduction in administrative time</div>
+                </div>
+                <div class="proof-stat-item">
+                    <div class="proof-stat-number">0</div>
+                    <div class="proof-stat-label">Fraud incidents with direct institutional reporting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Tuition Assistance Program?</h2>
+            <p>Stop funding an underused benefit. Start driving measurable retention and development outcomesâ€”with complete control and zero administrative headaches.</p>
+            <div class="cta-buttons">
+                <a href="#request-demo" class="cta-primary">Request a Demo</a>
+                <a href="#" class="cta-tertiary">Download One-Pager</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1rem;">Have questions? <a href="mailto:demo@effa.io" style="color: #F7931E; text-decoration: none;">Contact our team</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="effalogowhite.png" alt="EFFA">
+                <p>Employer-Funded Financial Aid platform making tuition assistance work better for everyone.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="https://www.effa.io/employer">For Employers</a></li>
+                    <li><a href="https://www.effa.io/university">For Universities</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="https://www.effa.io/about">About Us</a></li>
+                    <li><a href="https://www.effa.io/jobready">Job Ready Podcast</a></li>
+                    <li><a href="https://www.effa.io/blog">Blog</a></li>
+                    <li><a href="https://www.effa.io/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#request-demo">Request Demo</a></li>
+                    <li><a href="https://www.effa.io/login">Log In</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Employer-Funded Financial Aid, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

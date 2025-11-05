@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - EFFA | Rebuilding the Bridge Between Education and Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4A5568;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #4A5568;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4A5568;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #F7931E;
+        }
+
+        .nav-login {
+            border: 2px solid #4A5568;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-login:hover {
+            background: #4A5568;
+            color: white !important;
+        }
+
+        .nav-cta {
+            background: #F7931E;
+            color: white !important;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .nav-cta:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(247, 147, 30, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 6rem 5% 8rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(247, 147, 30, 0.1));
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: #F7931E;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            line-height: 1.7;
+            color: #CBD5E0;
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-cta-section {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-gray {
+            background: #F7FAFC;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #FFF5E6;
+            color: #F7931E;
+            padding: 0.5rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid #FFE4B3;
+            text-transform: uppercase;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            color: #1a202c;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .section p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4A5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .section strong {
+            color: #1a202c;
+        }
+
+        /* Insight/Bullet Lists */
+        .insight-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .insight-list li {
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .insight-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #F7931E;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* CTA Buttons */
+        .cta-primary {
+            display: inline-block;
+            background: #F7931E;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .cta-primary:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            border: 2px solid #F7931E;
+            color: #F7931E;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .cta-secondary:hover {
+            background: #F7931E;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+        }
+
+        .cta-section {
+            margin-top: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            justify-content: flex-start;
+        }
+
+        .cta-supporting {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #4A5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-width: 300px;
+        }
+
+        .cta-icon-box {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            color: #F7931E;
+        }
+
+        .cta-icon-box svg {
+            width: 100%;
+            height: 100%;
+            stroke-width: 2;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid #F7FAFC;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: #F7931E;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-card h4 {
+            font-size: 1.3rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4A5568;
+            margin: 0;
+        }
+
+        /* Credentials Section */
+        .credentials-text {
+            text-align: center;
+        }
+
+        .credentials-text h3 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .credentials-text p {
+            font-size: 1.2rem;
+            color: #4A5568;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .credential-badge {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            color: #1a202c;
+            border: 2px solid #F7FAFC;
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .credential-badge:hover {
+            border-color: #F7931E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-section p {
+            max-width: 750px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Tagline Section */
+        .tagline-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            padding: 5rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tagline-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(247, 147, 30, 0.1) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .tagline-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline-section p {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: white;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        .tagline-highlight {
+            color: #F7931E;
+            font-weight: 700;
+        }
+
+        .tagline-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #F7931E, transparent);
+            margin: 2rem auto 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            padding: 4rem 5% 2rem 5%;
+        }
+
+        .footer-main {
+            max-width: 1200px;
+            margin: 0 auto 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-tagline {
+            color: #CBD5E0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.875rem;
+        }
+
+        .footer-column ul li a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-column ul li a:hover {
+            color: #F7931E;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #CBD5E0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .tagline-section p {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="https://www.effa.io/"><img src="effalogo.png" alt="EFFA Logo" class="logo"></a>
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://www.effa.io/university">For Universities</a></li>
+            <li><a href="https://www.effa.io/about">About</a></li>
+            <li><a href="https://www.effa.io/jobready">Job Ready Podcast</a></li>
+            <li><a href="https://www.effa.io/contactus">Contact</a></li>
+            <li><a href="https://www.effa.io/blog">Blog</a></li>
+            <li><a href="https://www.effa.io/login" class="nav-login">Log In</a></li>
+            <li><a href="https://www.effa.io/contactus" class="nav-cta">Request Demo</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reduce US Student Debt Through <span class="highlight">Employer Funding</span></h1>
+            <p>Student debt, unfilled jobs, and broken funding systems keep millions from realizing their potential.</p>
+            <p>EFFA exists to change that &mdash; connecting universities and employers through a platform that makes education truly pay off.</p>
+            <div class="hero-cta-section">
+                <a href="https://www.effa.io/contactus" class="cta-primary">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <span class="section-tag">PROBLEM</span>
+            <h2>The System Wasn't Built to Work for Everyone</h2>
+            <p>For decades, tuition assistance was designed backwards:</p>
+            <ul class="insight-list">
+                <li><strong>Employees couldn't afford to pay upfront</strong></li>
+                <li><strong>Employers couldn't measure results</strong></li>
+                <li><strong>Universities couldn't scale partnerships without intermediaries taking huge cuts</strong></li>
+            </ul>
+            <p>The result? Billions wasted, millions missing out on opportunity &mdash; and a gap between learning and earning.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <span class="section-tag">MISSION-DRIVEN</span>
+            <h2>Our Mission</h2>
+            <p>We're on a mission to reduce student debt and rebuild America's talent pipeline by making employer-funded tuition work &mdash; enabling real-time control and measurable ROI for employers, universities, and every learner who dreams of a better job and a better life.</p>
+            <div class="cta-section">
+                <a href="https://www.effa.io/contactus" class="cta-primary">Request a Demo</a>
+                <div class="cta-supporting">
+                    <div class="cta-icon-box">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span>See how EFFA bridges education and employment in minutes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <span class="section-tag">SOLUTION</span>
+            <h2>EFFA is the platform where higher ed and industry transact &mdash; enabling:</h2>
+            <ul class="insight-list">
+                <li><strong>Employers:</strong> Real-time control and measurable ROI</li>
+                <li><strong>Universities:</strong> Scalable partnerships and faster employer funding</li>
+                <li><strong>Learners:</strong> Lower debt, clearer career paths, faster job outcomes</li>
+            </ul>
+            <div class="cta-section">
+                <a href="https://www.effa.io/contactus" class="cta-primary">Request a Demo</a>
+                <div class="cta-supporting">
+                    <div class="cta-icon-box">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                        </svg>
+                    </div>
+                    <span>Discover how EFFA connects all three stakeholders</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section section-white">
+        <div class="section-content">
+            <span class="section-tag">VALUES</span>
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>1. Trust First</h4>
+                    <p>We hold a sacred responsibility to steward tuition dollars wisely and transparently.</p>
+                </div>
+                <div class="value-card">
+                    <h4>2. All Boats Rise</h4>
+                    <p>When employers, universities, and students win together, society wins.</p>
+                </div>
+                <div class="value-card">
+                    <h4>3. Progress Over Perfection</h4>
+                    <p>We move fast, learn faster, and always deliver on our promises.</p>
+                </div>
+                <div class="value-card">
+                    <h4>4. Workforce Wellbeing</h4>
+                    <p>The future of learning depends on the health of those doing the work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="section section-gray">
+        <div class="section-content">
+            <span class="section-tag">WHO WE ARE</span>
+            <div class="credentials-text">
+                <h3>We've built what works</h3>
+                <p style="margin-bottom: 3rem;">Founded by builders of:</p>
+                <div class="credentials-grid">
+                    <div class="credential-badge">EdAssist</div>
+                    <div class="credential-badge">Guild</div>
+                    <div class="credential-badge">University of Phoenix</div>
+                    <div class="credential-badge">DeVry</div>
+                    <div class="credential-badge">Western Governors University</div>
+                    <div class="credential-badge">Apollo Global</div>
+                    <div class="credential-badge">Apollo Education Group</div>
+                    <div class="credential-badge">Job Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section section-white">
+        <div class="section-content final-cta-section">
+            <h2>Let's Make Tuition Assistance Work for Everyone</h2>
+            <p>Whether you're an employer investing in your people or a university building the next workforce, EFFA gives you the platform to make it happen.</p>
+            <div class="final-cta-buttons">
+                <a href="https://www.effa.io/contactus" class="cta-primary">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Tray Tagline Section -->
+    <section class="tagline-section">
+        <div class="tagline-content">
+            <p>
+                Rebuilding the Bridge
+                <span class="tagline-highlight">Between Education and Work</span>
+            </p>
+            <div class="tagline-divider"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-main">
+            <div class="footer-left">
+                <a href="https://www.effa.io/"><img src="effalogo.png" alt="EFFA Logo" class="footer-logo"></a>
+                <p class="footer-tagline">On a mission to reduce US student debt by helping employers invest in the talent they wish to hire and retain.</p>
+            </div>
+            <div class="footer-content">
+            <div class="footer-column">
+                <h4>Solutions</h4>
+                <ul>
+                    <li><a href="https://www.effa.io/">For Employers</a></li>
+                    <li><a href="https://www.effa.io/university">For Universities</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="https://www.effa.io/about">About</a></li>
+                    <li><a href="https://www.effa.io/contactus">Contact</a></li>
+                    <li><a href="https://www.effa.io/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://www.effa.io/jobready">Job Ready Podcast</a></li>
+                    <li><a href="https://www.effa.io/login">Log In</a></li>
+                    <li><a href="https://www.effa.io/contactus">Request Demo</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Employer-Funded Financial Aid, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFFA - Employer-Funded Financial Aid Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/heroicons@2.0.18/24/outline/index.js" type="module"></script>
+    <style>
+        /* BRAND COLORS */
+        :root {
+            --effa-orange: #FFA634;
+            --effa-yellow: #F9CC69;
+            --effa-charcoal: #4C525B;
+            --effa-medium-gray: #83888F;
+            --effa-blue: #4A78BC;
+            --effa-light-blue: #7EBBE6;
+            --effa-light-gray: #E6E7E8;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--effa-charcoal);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* TYPOGRAPHY */
+        h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 28px;
+            line-height: 1.3;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        h4 {
+            font-size: 20px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--effa-medium-gray);
+        }
+
+        .large-text {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        .container-narrow {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 60px;
+        }
+
+        /* NAVIGATION - Minimal & Clean */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(76, 82, 91, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+
+        .logo-placeholder {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--effa-charcoal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links li {
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--effa-charcoal);
+            font-weight: 400;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--effa-orange);
+        }
+
+        .nav-links a.for-universities {
+            color: var(--effa-blue);
+            font-weight: 600;
+        }
+
+        /* BUTTONS - Modern & Soft */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--effa-orange);
+            color: var(--white);
+            box-shadow: 0 4px 16px rgba(255, 166, 52, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 166, 52, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--effa-charcoal);
+            border: 2px solid var(--effa-charcoal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--effa-charcoal);
+            color: var(--white);
+        }
+
+        .btn-secondary-nav {
+            background: transparent;
+            color: var(--effa-charcoal);
+            border: 2px solid var(--effa-charcoal);
+            padding: 10px 24px !important;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary-nav:hover {
+            background: var(--effa-charcoal);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+
+        /* HERO - Asymmetric & Dynamic */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFA634 0%, #F9CC69 100%);
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 24px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            font-size: 56px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            color: var(--effa-charcoal);
+            font-size: 22px;
+            line-height: 1.5;
+            margin-bottom: 36px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .hero-stat-card:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 12px 32px rgba(255, 166, 52, 0.25);
+        }
+
+        .hero-stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--effa-orange);
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: 16px;
+            color: var(--effa-charcoal);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 968px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .hero-stat-card {
+                flex: 1;
+                min-width: 250px;
+            }
+        }
+
+        /* PROBLEM/SOLUTION - Overlapping Cards */
+        .problem-solution {
+            padding: 60px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 24px;
+        }
+
+        /* COMPARISON SECTION - Compact Horizontal Design */
+        .comparison-rows {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .problem-item,
+        .solution-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .problem-item {
+            background: linear-gradient(135deg, #FEE2E2 0%, #FECACA 100%);
+        }
+
+        .solution-item {
+            background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%);
+        }
+
+        .item-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .problem-item .item-icon {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .solution-item .item-icon {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .problem-item .item-label {
+            color: #DC2626;
+        }
+
+        .solution-item .item-label {
+            color: #059669;
+        }
+
+        .item-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--effa-charcoal);
+            font-weight: 500;
+        }
+
+        .arrow-divider {
+            color: var(--effa-orange);
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        /* BENEFITS - Asymmetric Grid */
+        .benefits {
+            padding: 60px 0;
+            background: linear-gradient(180deg, var(--white) 0%, var(--effa-light-gray) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 48px;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 56px rgba(0, 0, 0, 0.12);
+        }
+
+        .benefit-card:nth-child(1) {
+            grid-column: span 6;
+        }
+
+        .benefit-card:nth-child(2) {
+            grid-column: span 6;
+        }
+
+        .benefit-card:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        .benefit-card:nth-child(4) {
+            grid-column: span 7;
+        }
+
+        .benefit-icon-placeholder {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--effa-orange) 0%, var(--effa-yellow) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 24px rgba(255, 166, 52, 0.25);
+        }
+
+        .benefit-icon-placeholder svg {
+            width: 36px;
+            height: 36px;
+            stroke: var(--white);
+            stroke-width: 2;
+        }
+
+        .benefit-card h3 {
+            color: var(--effa-charcoal);
+            margin-bottom: 16px;
+        }
+
+        .benefit-stat {
+            font-size: 64px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--effa-orange) 0%, var(--effa-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 24px 0;
+            line-height: 1;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* HOW IT WORKS - Clean Timeline */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .process-diagram-placeholder {
+            margin: 60px 0 80px;
+            background: var(--effa-light-gray);
+            border-radius: 24px;
+            padding: 80px 40px;
+            text-align: center;
+            border: 2px dashed var(--effa-medium-gray);
+            font-size: 14px;
+            color: var(--effa-medium-gray);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px;
+            margin-top: 40px;
+        }
+
+        .step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-content {
+            flex-grow: 1;
+        }
+
+        .step-screenshot {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .step-number {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--effa-orange) 0%, var(--effa-yellow) 100%);
+            color: var(--white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            box-shadow: 0 8px 24px rgba(255, 166, 52, 0.3);
+        }
+
+        .step h3 {
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--effa-charcoal);
+        }
+
+        .step p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .step-screenshot-placeholder {
+            background: var(--effa-light-gray);
+            border-radius: 12px;
+            padding: 32px 20px;
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--effa-medium-gray);
+            text-align: center;
+            border: 2px dashed rgba(131, 136, 143, 0.4);
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        /* PROOF POINTS - Full Bleed with Overlay */
+        .proof-points {
+            padding: 120px 0;
+            background: var(--effa-charcoal);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proof-points::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/diverse-professionals.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .proof-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .proof-points h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .proof-points .large-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 72px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--effa-orange) 0%, var(--effa-yellow) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.5;
+        }
+
+        .proof-disclaimer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FINAL CTA - Bold & Simple */
+        .final-cta {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .final-cta h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+            font-size: 56px;
+        }
+
+        .final-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 22px;
+            margin-bottom: 48px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .btn-primary {
+            background: var(--effa-orange);
+            color: var(--white);
+            font-size: 18px;
+            padding: 20px 48px;
+        }
+
+        .final-cta .btn-primary:hover {
+            background: #e67e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(247, 147, 30, 0.4);
+        }
+
+        /* FOOTER - Clean & Organized */
+        footer {
+            background: var(--effa-charcoal);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 24px;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            color: var(--effa-orange);
+            margin-bottom: 24px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-column a {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 16px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--effa-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .hero .container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .benefit-card:nth-child(1),
+            .benefit-card:nth-child(2),
+            .benefit-card:nth-child(3),
+            .benefit-card:nth-child(4) {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 42px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            .container, .container-narrow {
+                padding: 0 24px;
+            }
+
+            .comparison-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .arrow-divider {
+                display: none;
+            }
+
+            .problem-item,
+            .solution-item {
+                padding: 16px;
+            }
+
+            .item-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 28px;
+            }
+
+            .item-text {
+                font-size: 15px;
+            }
+            .benefits-grid,
+            .steps-grid,
+            .stats-row,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero {
+                padding: 80px 0 100px;
+            }
+
+            .nav-links {
+                gap: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container">
+            <a href="https://www.effa.io">
+                <img src="images/logos/effalogo.png" alt="EFFA - Employer-Funded Financial Aid" style="height: 50px; width: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://www.effa.io/employer">For Employers</a></li>
+                <li><a href="https://www.effa.io/university">For Universities</a></li>
+                <li><a href="https://www.effa.io/about">About Us</a></li>
+                <li><a href="https://www.effa.io/jobready">Job Ready Podcast</a></li>
+                <li><a href="https://www.effa.io/blog">Blog</a></li>
+                <li><a href="https://www.effa.io/login" class="btn-secondary-nav">Schedule a Demo</a></li>
+                <li><a href="#request-demo" class="btn btn-primary" style="padding: 12px 28px;">Request Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>A Tuition Benefits Platform that <span style="color: #4A78BC;">Works</span> for Everyone</h1>
+                <p>Automate your program. Eliminate risk. Deliver measurable results.</p>
+                <div class="hero-cta">
+                    <a href="https://www.effa.io/employer" class="btn btn-primary" style="padding: 16px 32px; font-size: 18px;">For Employers</a>
+                    <a href="https://www.effa.io/university" class="btn btn-primary" style="padding: 16px 32px; font-size: 18px;">For Universities</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number">85%</div>
+                    <div class="hero-stat-label">say the program is important to job satisfaction</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number">70-90%</div>
+                    <div class="hero-stat-label">reduction in administrative processing time</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number">0</div>
+                    <div class="hero-stat-label">fraud incidents through direct institutional reporting</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM/SOLUTION -->
+    <section class="problem-solution" id="solutions">
+        <div class="container-narrow">
+            <div class="section-header">
+                <span style="display: inline-block; background: #FFF5E6; color: var(--effa-orange); padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid #FFE4B3;">THE CHALLENGE</span>
+                <h2>Where Traditional Tuition Assistance Fails</h2>
+                <p class="large-text">Your tuition benefit should drive retention and build skills. Instead, it creates administrative burden and compliance risk while employees can't even afford to use it.</p>
+            </div>
+
+            <div class="comparison-rows">
+                <!-- Row 1 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">💸</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">Employees can't afford upfront costs—even with 100% reimbursement</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">Direct payment eliminates employee out-of-pocket burden</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">⏰</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">Manual receipt and transcript verification drains HR time</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">Automated grade verification—zero manual processing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">⚠️</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">Risk of paying for failed courses or policy violations</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">Payment deferred until course completion and compliance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">🧾</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">Multiple invoices from different schools create chaos</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">One consolidated monthly invoice for all schools</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 5 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">📊</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">No visibility into program ROI or retention impact</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">Real-time dashboard showing retention and skill impact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 6 -->
+                <div class="comparison-row">
+                    <div class="problem-item">
+                        <div class="item-icon">🛡️</div>
+                        <div class="item-content">
+                            <div class="item-label">Problem</div>
+                            <p class="item-text">Fraud opportunities through employee-submitted documents</p>
+                        </div>
+                    </div>
+                    <div class="arrow-divider">→</div>
+                    <div class="solution-item">
+                        <div class="item-icon">✓</div>
+                        <div class="item-content">
+                            <div class="item-label">Solution</div>
+                            <p class="item-text">Institutional reporting eliminates fraud risk entirely</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span style="display: inline-block; background: #FFF5E6; color: var(--effa-orange); padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid #FFE4B3;">KEY BENEFITS</span>
+                <h2>What This Means for You</h2>
+                <p class="large-text">Stop wasting time on paperwork. Start delivering measurable business results.</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                    </div>
+                    <h3>Slash Administrative Time</h3>
+                    <div class="benefit-stat">70-90%</div>
+                    <p>reduction in processing time. Your team approves eligibility with one clickÃ¢â‚¬â€we handle everything else from enrollment to compliance to billing.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                        </svg>
+                    </div>
+                    <h3>Zero Compliance Risk</h3>
+                    <div class="benefit-stat">100%</div>
+                    <p>guaranteed policy compliance. We defer payment until universities verify grades meet your requirements. You only pay for successful, compliant outcomes.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
+                        </svg>
+                    </div>
+                    <h3>Boost Program Utilization</h3>
+                    <div class="benefit-stat">25%+</div>
+                    <p>increase in benefit usage when employees don't pay upfront. Higher utilization means better retention ROI and stronger employer brand.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                        </svg>
+                    </div>
+                    <h3>Prove Strategic Value</h3>
+                    <div class="benefit-stat">Real-Time</div>
+                    <p>ROI dashboard tracks retention rates, skill development, and cost per outcome. Finally show leadership exactly what this benefit delivers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container-narrow">
+            <div class="section-header">
+                <span style="display: inline-block; background: #FFF5E6; color: var(--effa-orange); padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid #FFE4B3;">SIMPLE IMPLEMENTATION</span>
+                <h2>How It Works (It's Really This Simple)</h2>
+                <p class="large-text">Four steps. Zero integration. Your program running in under 15 minutes.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <h3>Quick Setup</h3>
+                        <p>Upload your policy once (15 minutes). We configure everything to match your requirements. No HRIS integration needed.</p>
+                    </div>
+                    <div class="step-screenshot">
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <img src="images/step1-quick-setup.png" alt="Policy Configuration Screen" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <h3>Employee Enrollment</h3>
+                        <p>Employees see partner universities on your benefits page. Universities handle counseling. You approve eligibility with one click.</p>
+                    </div>
+                    <div class="step-screenshot">
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <img src="images/step2-employee-enrollment.png" alt="Employee Enrollment Dashboard" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <h3>Automated Compliance</h3>
+                        <p>Payment deferred until course completion. Universities report grades directly to us. Only compliant transactions get approved.</p>
+                    </div>
+                    <div class="step-screenshot">
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <img src="images/step3-automated-compliance.png" alt="Compliance Verification View" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <h3>Simple Billing</h3>
+                        <p>One consolidated invoice with line-item detail. Every charge guaranteed policy-compliant. Complete audit trail included.</p>
+                    </div>
+                    <div class="step-screenshot">
+                        <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <img src="images/step4-simple-billing.png" alt="Invoice and Payment Methods" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <a href="#request-demo" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Request Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF POINTS -->
+    <section class="proof-points">
+        <div class="container">
+            <div class="proof-content">
+                <span style="display: inline-block; background: #FFF5E6; color: var(--effa-orange); padding: 0.5rem 1.25rem; border-radius: 30px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; border: 1px solid #FFE4B3;">PROVEN EXPERTISE</span>
+                <h2>Proven Results from Years of Experience</h2>
+                <p class="large-text">Our founding team has built some of the industry's leading tuition assistance solutionsÃ¢â‚¬â€serving millions of employees across Fortune 500 companies. We know what works.</p>
+
+                <div class="stats-row">
+                    <div class="stat">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">say tuition assistance is important to job satisfaction</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number">70-90%</div>
+                        <div class="stat-label">reduction in administrative processing time with automation</div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number">Zero</div>
+                        <div class="stat-label">fraud incidents through direct institutional reporting</div>
+                    </div>
+                </div>
+
+                <p class="proof-disclaimer">Statistics based on industry research and data from our founding team's experience building leading tuition assistance platforms. See our methodology and sources in the About section.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Ready to Transform Your Tuition Assistance Program?</h2>
+                <p>See exactly how EFFA automates compliance, eliminates risk, and proves ROI in a 15-minute demo.</p>
+                <a href="#request-demo" class="btn btn-primary">Request Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="https://www.effa.io">
+                        <img src="images/logos/effalogowhite.png" alt="EFFA - Employer-Funded Financial Aid" style="height: 50px; width: auto; margin-bottom: 24px; filter: brightness(0) invert(1);">
+                    </a>
+                    <p>Making tuition assistance work for employers, universities, and the students they serve.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <a href="https://www.effa.io/employer">For Employers</a>
+                    <a href="https://www.effa.io/university">For Universities</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="https://www.effa.io/about">About Us</a>
+                    <a href="https://www.effa.io/jobready">Job Ready Podcast</a>
+                    <a href="https://www.effa.io/blog">Blog</a>
+                    <a href="https://www.effa.io/contact">Contact</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#request-demo">Request Demo</a>
+                    <a href="https://www.effa.io/login">Log In</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Employer-Funded Financial Aid, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
